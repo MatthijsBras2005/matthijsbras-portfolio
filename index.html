@@ -4,31 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Matthijs Bras</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
         }
     </script>
-    
+
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
-        [x-cloak] { display: none !important; }
+        [x-cloak] {
+            display: none !important;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             transition: background-color 0.3s, color 0.3s;
         }
-        
+
         /* De grid-achtergrond stijlen */
         .bg-pattern-light {
             background-color: #f1f5f9;
             background-image: radial-gradient(#94a3b8 1px, transparent 1px);
             background-size: 30px 30px;
         }
+
         .bg-pattern-dark {
             background-color: #0f172a;
             background-image: radial-gradient(#1e293b 1.5px, transparent 1.5px);
@@ -41,13 +45,19 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        
+
         /* Verbergt scrollbar op mobiel in de navigatie */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
-<body x-data="{ darkMode: true, lastModified: '' }" 
+<body x-data="{ darkMode: true, lastModified: '' }"
       x-init="lastModified = new Intl.DateTimeFormat('nl-NL', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Europe/Amsterdam' }).format(new Date(document.lastModified))"
       :class="darkMode ? 'dark bg-pattern-dark text-slate-100' : 'bg-pattern-light text-slate-900'" class="min-h-screen relative">
 
@@ -61,12 +71,12 @@
         <div class="shadow-lg border p-2 flex justify-between items-center px-4 md:px-6 transition-all duration-300 rounded-full
                     bg-white/80 border-slate-200 text-slate-700 backdrop-blur-md
                     dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-200">
-            
+
             <div class="flex items-center gap-2 mr-2">
                 <div class="w-8 h-8 bg-gradient-to-br from-indigo-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xs shrink-0">M</div>
                 <span class="font-bold text-sm hidden sm:inline tracking-tight dark:text-white whitespace-nowrap">Matthijs Bras</span>
             </div>
-            
+
             <div class="flex gap-1 overflow-x-auto no-scrollbar">
                 <a href="#home" class="px-2 md:px-4 py-2 rounded-full text-[10px] md:text-xs transition-all hover:bg-indigo-500/10">Home</a>
                 <a href="#bim" class="px-2 md:px-4 py-2 rounded-full text-[10px] md:text-xs transition-all hover:bg-indigo-500/10">Ervaring</a>
@@ -84,7 +94,7 @@
     </nav>
 
     <div class="max-w-6xl mx-auto pt-32 px-4 space-y-20 pb-24">
-        
+
         <section id="home" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             <div class="lg:col-span-8 bento-card p-10 bg-white/70 dark:bg-slate-800/70 border border-white/50 dark:border-slate-700 backdrop-blur-md flex flex-col justify-center">
                 <h3 class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest text-xs mb-4 uppercase">Business IT & Management</h3>
@@ -95,6 +105,12 @@
                 <div class="flex flex-wrap gap-4">
                     <a href="#contact" class="bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-105 transition-all text-center border border-transparent">Contact</a>
                     <a href="https://www.linkedin.com/in/matthijs-bras-96a7b7270" target="_blank" class="border border-slate-300 dark:border-slate-600 px-8 py-3 rounded-full font-bold hover:bg-slate-100 dark:hover:bg-slate-700 transition-all text-center text-slate-800 dark:text-white bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm">LinkedIn</a>
+                    <a href="Portfolio PDF.pdf" download="Matthijs_Bras_CV.pdf" class="border-2 border-indigo-500 text-indigo-600 dark:text-indigo-400 px-6 py-3 rounded-full font-bold hover:bg-indigo-500 hover:text-white dark:hover:text-white transition-all text-center backdrop-blur-sm flex items-center gap-2 hover:scale-105 shadow-lg shadow-indigo-500/10">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Download CV
+                    </a>
                 </div>
             </div>
 
@@ -125,7 +141,7 @@
                             <div>
                                 <span class="text-xs font-bold text-slate-500 dark:text-slate-400 italic">sept 2018 - juli 2024</span>
                                 <p class="font-bold text-slate-900 dark:text-white">HAVO</p>
-                                <p class="text-sm text-slate-600 dark:text-slate-300">Trinitas College Han Fortmann</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300">Trinitas College Han Fortmann</p>
                             </div>
                         </div>
                     </div>
@@ -200,7 +216,7 @@
         <section id="projecten" class="pt-12">
             <h2 class="text-2xl font-bold mb-6 ml-4 text-slate-900 dark:text-white">Projecten</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
+
                 <div class="bento-card p-8 bg-gradient-to-br from-indigo-600 to-blue-700 shadow-xl border border-indigo-500/30 flex flex-col h-full relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
                     <img src="Stauder logo breed.webp" alt="Stauder Technologies Logo" class="w-full h-24 md:h-32 object-contain rounded-2xl mb-6 relative z-10">
@@ -216,7 +232,7 @@
                         <span class="text-[10px] bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full uppercase font-bold text-white border border-white/30">NDA</span>
                     </div>
                 </div>
-                
+
                 <div class="bento-card p-8 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border-t-4 border-t-indigo-500 border-x border-b border-white/50 dark:border-slate-700 flex flex-col h-full">
                     <img src="Oracle_APEX_logo.png" alt="Oracle APEX Logo" class="w-full h-24 md:h-32 object-contain rounded-2xl mb-6 dark:brightness-150 dark:contrast-125 transition-all">
                     <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Reisbureau Oracle</h3>
@@ -237,9 +253,9 @@
         <section id="contact" class="pt-12">
             <h2 class="text-3xl font-extrabold mb-2 text-center text-slate-900 dark:text-white">Laten we kennismaken</h2>
             <p class="text-center mb-10 text-slate-600 dark:text-slate-400">Open voor stages, juniorrollen en interessante connecties.</p>
-            
+
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                
+
                 <a href="mailto:matthijs.bras@ziggo.nl" class="bento-card p-6 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-white/50 dark:border-slate-700 hover:-translate-y-1 transition-transform flex flex-col items-center text-center group">
                     <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-full flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform border border-indigo-200 dark:border-indigo-800">
                         📧
@@ -248,8 +264,8 @@
                     <span class="text-xs text-indigo-600 dark:text-indigo-400 font-medium break-all">matthijs.bras@ziggo.nl</span>
                 </a>
 
-                <div x-data="{ copied: false }" 
-                     @click="navigator.clipboard.writeText('matthijs1811'); copied = true; setTimeout(() => copied = false, 2500)" 
+                <div x-data="{ copied: false }"
+                     @click="navigator.clipboard.writeText('matthijs1811'); copied = true; setTimeout(() => copied = false, 2500)"
                      class="bento-card p-6 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-white/50 dark:border-slate-700 hover:-translate-y-1 transition-transform flex flex-col items-center text-center cursor-pointer group">
                     <div class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform rounded-full overflow-hidden border border-slate-200 dark:border-slate-600 bg-white">
                         <img src="discordlogo.png" alt="Discord Logo" class="w-full h-full object-cover">
@@ -260,8 +276,8 @@
                 </div>
 
                 <a href="https://github.com/MatthijsBras2005" target="_blank" class="bento-card p-6 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-white/50 dark:border-slate-700 hover:-translate-y-1 transition-transform flex flex-col items-center text-center group">
-                    <div class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform rounded-full overflow-hidden border border-slate-200 dark:border-slate-600 bg-white flex items-center justify-center">
-                        <img src="githublogo2.png" alt="GitHub Logo" class="w-full h-full object-cover">
+                    <div class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform rounded-full overflow-hidden border border-slate-200 dark:border-slate-600 bg-white flex items-center justify-center p-1.5">
+                        <img src="githublogo2.png" alt="GitHub Logo" class="w-full h-full object-contain">
                     </div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-1">GitHub</h4>
                     <span class="text-xs text-indigo-600 dark:text-indigo-400 font-medium">MatthijsBras2005</span>
